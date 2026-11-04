@@ -13,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
   const variablesPath = fileURLToPath(new URL('./src/styles/variables.styl', import.meta.url))
 
   return {
-    base: '/images-hosting/',
+    base: env.VITE_BASE_URL || '/',
     plugins: createVitePlugins(viteEnv, isBuild),
     resolve: {
       alias: {

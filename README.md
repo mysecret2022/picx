@@ -1,8 +1,11 @@
+> [!NOTE]
+> **开源出处与免责声明**：本项目基于上游开源项目 [XPoet/picx](https://github.com/XPoet/picx) 进行二次开发与 Docker 容器化适配构建，维护者非官方维护者。完整保留原作者著作权与 AGPL-3.0 协议。
+
 <a href="https://picx.xpoet.cn">
   <img width="60" align="right" alt="PicX" src="./public/logo.svg">
 </a>
 
-# PicX
+# PicX (Docker 支持版)
 
 [![Release](https://img.shields.io/github/release/XPoet/picx?style=flat&logo=github)](https://github.com/XPoet/picx/releases)
 [![License](https://img.shields.io/github/license/XPoet/picx?style=flat&logo=github)](./LICENSE)
@@ -29,6 +32,44 @@
 - **打开即用**：无需下载安装，在浏览器里就能完成常用图片处理。
 - **隐私优先**：图片工具在本地浏览器中运行，处理图片无需上传服务器。
 - **简单顺手**：拖拽、粘贴或选择图片，调整参数、预览效果，下载作品。
+
+## 🐳 Docker 快速运行（极简指南）
+
+本项目已完成 Docker 容器化与轻量化构建支持，并配置了自动化镜像构建。
+
+### 方式 1：无需克隆代码，单条 Docker 命令直接运行（推荐）
+```bash
+docker run -d --name picx -p 8088:80 --restart unless-stopped ghcr.io/mysecret2022/picx:latest
+```
+运行后打开浏览器访问：`http://localhost:8088`（或服务器 IP:8088）。
+
+---
+
+### 方式 2：使用 Docker Compose 运行
+```bash
+# 1. 克隆本仓库
+git clone https://github.com/mysecret2022/picx.git
+cd picx
+
+# 2. 启动容器（优先拉取预构建镜像，秒级启动）
+docker compose up -d
+```
+如需基于本地源码自编译构建镜像，执行：
+```bash
+docker compose up -d --build
+```
+
+---
+
+### 方式 3：桌面一键脚本
+- **Windows 用户**：直接双击根目录下的 `start-docker.bat`。
+- **Linux / macOS 用户**：终端运行 `./start-docker.sh`。
+
+---
+
+### 💡 资源占用与自建使用说明
+- **服务器性能需求**：服务端采用 Nginx Alpine 代理静态文件，运行内存仅约 **5.7 MB**，CPU 占用率近乎 **0%**。所有核心图片编解码与压缩任务全部基于 WebAssembly 由访客浏览器本地执行，性能极快且保护隐私。
+- **图床登录方式**：自建部署登录图床时，直接选择输入 **GitHub Token (个人访问令牌 PAT)** 即可畅享完整图床管理功能。
 
 ## 图片工具
 

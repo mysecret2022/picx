@@ -1,0 +1,10 @@
+services:
+  picx:
+    image: ghcr.io/mysecret2022/picx:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: picx
+    restart: unless-stopped
+    ports:
+      - "${PICX_PORT:-8088}:80"

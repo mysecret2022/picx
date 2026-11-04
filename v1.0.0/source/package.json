@@ -1,0 +1,103 @@
+{
+  "name": "picx",
+  "version": "3.2.1",
+  "private": false,
+  "packageManager": "pnpm@11.18.0",
+  "author": "XPoet <i@xpoet.cn>",
+  "license": "AGPL-3.0",
+  "homepage": "https://github.com/XPoet/picx#readme",
+  "bugs": {
+    "url": "https://github.com/XPoet/picx/issues"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "vite --configLoader runner",
+    "build": "vite build --configLoader runner",
+    "preview": "vite preview --configLoader runner",
+    "serve": "vite preview --configLoader runner",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.worker.json",
+    "test": "vitest run --configLoader runner",
+    "test:watch": "vitest --configLoader runner",
+    "test:e2e": "playwright test",
+    "format": "eslint . --fix",
+    "format:check": "eslint .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:style": "stylelint \"src/**/*.{vue,styl,css}\" --config stylelint.config.mjs",
+    "lint:style:fix": "stylelint \"src/**/*.{vue,styl,css}\" --config stylelint.config.mjs --fix",
+    "verify": "pnpm lint && pnpm lint:style && pnpm typecheck && pnpm test && pnpm build",
+    "prepare": "husky"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-custom"
+    },
+    "cz-custom": {
+      "config": ".cz-config.js"
+    }
+  },
+  "dependencies": {
+    "@jsquash/avif": "2.1.1",
+    "@jsquash/jpeg": "1.6.0",
+    "@jsquash/oxipng": "2.3.0",
+    "@jsquash/webp": "1.5.0",
+    "axios": "1.19.0",
+    "element-plus": "2.14.3",
+    "pinia": "4.0.2",
+    "vue": "3.5.40",
+    "vue-i18n": "11.4.8",
+    "vue-router": "5.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "9.2.0",
+    "@commitlint/cli": "21.2.1",
+    "@commitlint/config-conventional": "21.2.0",
+    "@iconify-json/ep": "1.2.4",
+    "@playwright/test": "1.62.1",
+    "@plugin-web-update-notification/vite": "2.1.2",
+    "@semantic-release/changelog": "7.0.0",
+    "@semantic-release/commit-analyzer": "13.0.1",
+    "@semantic-release/git": "11.0.1",
+    "@semantic-release/github": "12.0.10",
+    "@semantic-release/npm": "13.2.0",
+    "@semantic-release/release-notes-generator": "14.1.1",
+    "@types/node": "^24.10.0",
+    "@types/web-bluetooth": "0.0.21",
+    "@vitejs/plugin-vue": "6.0.8",
+    "@vue/compiler-sfc": "3.5.40",
+    "@vue/test-utils": "2.4.11",
+    "code-inspector-plugin": "^2.0.8",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-conventionalcommits": "9.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-custom": "^0.0.2",
+    "eslint": "10.8.0",
+    "husky": "9.1.7",
+    "jsdom": "^27.4.0",
+    "lint-staged": "17.2.0",
+    "postcss-html": "^1.8.0",
+    "postcss-styl": "^0.12.3",
+    "semantic-release": "25.0.9",
+    "stylelint": "17.14.1",
+    "stylelint-config-standard": "40.0.0",
+    "stylus": "0.64.0",
+    "typescript": "^6.0.0",
+    "unplugin-auto-import": "21.0.0",
+    "unplugin-icons": "23.0.1",
+    "unplugin-vue-components": "32.1.0",
+    "vite": "8.2.0",
+    "vite-plugin-pwa": "1.3.0",
+    "vitest": "4.1.10",
+    "vue-tsc": "3.3.8"
+  },
+  "lint-staged": {
+    "*.{js,ts,mjs}": "eslint --fix",
+    "*.{styl,css}": "stylelint --fix --config stylelint.config.mjs",
+    "*.vue": [
+      "eslint --fix",
+      "stylelint --fix --config stylelint.config.mjs"
+    ]
+  }
+}
