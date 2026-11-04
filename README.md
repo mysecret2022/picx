@@ -91,14 +91,6 @@ docker compose up -d --build
 
 通过 GitHub OAuth 或 Token 登录，完成图床配置即可使用。查看 [图床使用指南](https://picx-docs.xpoet.cn/usage-guide/get-start.html)，或直接 [进入图床](https://picx.xpoet.cn/images-hosting/)。
 
-## 参与与支持
-
-欢迎通过 [Issue](https://github.com/XPoet/picx/issues) 提交问题与建议，通过 Pull Request 改进功能和文档。参与前请阅读 [贡献指南](https://picx-docs.xpoet.cn/contribution-guide/contribution-guide.html)，感谢每一位 [贡献者](https://github.com/XPoet/picx/graphs/contributors)。
-
-如果 PicX 对你有帮助，欢迎点亮 **Star** 或 **赞赏支持**，让它持续变得更好。
-
-<img width="300" src="https://xpoet.cn/images/admire-code-wechat.webp" />
-
 ## 开源许可
 
 [AGPL-3.0](./LICENSE) · Copyright © 2020–Present XPoet

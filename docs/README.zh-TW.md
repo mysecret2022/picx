@@ -50,14 +50,6 @@
 
 透過 GitHub OAuth 或 Token 登入，完成圖床設定即可使用。查看 [圖床使用指南](https://picx-docs.xpoet.cn/usage-guide/get-start.html)，或直接 [進入圖床](https://picx.xpoet.cn/images-hosting/)。
 
-## 參與與支持
-
-歡迎透過 [Issue](https://github.com/XPoet/picx/issues) 提交問題與建議，透過 Pull Request 改進功能和文件。參與前請閱讀 [貢獻指南](https://picx-docs.xpoet.cn/contribution-guide/contribution-guide.html)，感謝每一位 [貢獻者](https://github.com/XPoet/picx/graphs/contributors)。
-
-如果 PicX 對你有幫助，歡迎點亮 **Star** 或 **贊助支持**，讓它持續變得更好。
-
-<img width="300" alt="微信贊助 QR Code" src="https://xpoet.cn/images/admire-code-wechat.webp" />
-
 ## 開源授權
 
 [AGPL-3.0](../LICENSE) · Copyright © 2020–Present XPoet

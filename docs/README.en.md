@@ -50,14 +50,6 @@ The familiar image hosting service is still available. Using the GitHub API, Pic
 
 Sign in with GitHub OAuth or a Token, then configure image hosting to get started. Read the [image hosting guide](https://picx-docs.xpoet.cn/usage-guide/get-start.html) or [open image hosting](https://picx.xpoet.cn/images-hosting/).
 
-## Contribute and Support
-
-Report problems and share suggestions through [Issues](https://github.com/XPoet/picx/issues), or improve features and documentation with a Pull Request. Please read the [contribution guide](https://picx-docs.xpoet.cn/contribution-guide/contribution-guide.html) before contributing. Thank you to every [contributor](https://github.com/XPoet/picx/graphs/contributors).
-
-If PicX helps you, give it a **Star** or **support the project with a donation** to help it keep improving.
-
-<img width="300" alt="WeChat donation QR code" src="https://xpoet.cn/images/admire-code-wechat.webp" />
-
 ## License
 
 [AGPL-3.0](../LICENSE) · Copyright © 2020–Present XPoet
