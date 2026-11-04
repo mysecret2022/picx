@@ -45,18 +45,35 @@ docker run -d --name picx -p 8088:80 --restart unless-stopped ghcr.io/mysecret20
 
 ---
 
-### 方式 2：使用 Docker Compose 运行
-```bash
-# 1. 克隆本仓库
-git clone https://github.com/mysecret2022/picx.git
-cd picx
+### 方式 2：使用 Docker Compose 运行（推荐）
 
-# 2. 启动容器（优先拉取预构建镜像，秒级启动）
-docker compose up -d
+新建 `docker-compose.yml` 文件并粘贴以下内容：
+
+```yaml
+services:
+  picx:
+    image: ghcr.io/mysecret2022/picx:latest
+    container_name: picx
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai                 # 时区设置
+    ports:
+      - "8088:80"                        # Web 访问端口（宿主机:容器）
+    # networks:
+    #   - npm_net                        # 反向代理网络（如配合 Nginx Proxy Manager 使用，可取消注释）
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m                     # 限制日志大小，防止占用过多磁盘
+
+# networks:
+#   npm_net:
+#     external: true
 ```
-如需基于本地源码自编译构建镜像，执行：
+
+然后在同级目录下启动：
 ```bash
-docker compose up -d --build
+docker compose up -d
 ```
 
 ---

@@ -1,10 +1,19 @@
 services:
   picx:
     image: ghcr.io/mysecret2022/picx:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: picx
     restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai                 # 时区设置
     ports:
-      - "${PICX_PORT:-8088}:80"
+      - "8088:80"                        # Web 访问端口（宿主机:容器）
+    # networks:
+    #   - npm_net                        # 反向代理网络（如配合 Nginx Proxy Manager 使用，可取消注释）
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m                     # 限制日志大小，防止占用过多磁盘
+
+# networks:
+#   npm_net:
+#     external: true
